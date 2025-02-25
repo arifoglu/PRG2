@@ -8,8 +8,8 @@ int main(){
     printf("%f\n",num);      //  3.500000
     printf("%.1f\n",num);    //  3.5
     printf("%.2f\n",num);    //  3.50
-    printf("%.6f\n",num);    //  3.50
-    printf("%.7f\n",num);    //  3.50
+    printf("%.6f\n",num);    //  3.500000
+    printf("%.7f\n",num);    //  3.5000000
     
     // %.f
     printf("%.f\n",num);     //  4   
