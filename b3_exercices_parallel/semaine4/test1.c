@@ -1,16 +1,25 @@
-#include <stdio.h> // Standart girdi/çıktı fonksiyonları için gerekli
+#include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-    int val = 10;      // Bir tamsayı değişkeni tanımlanır ve değeri 10 olarak atanır
-    int *p_val = &val; // Bir işaretçi tanımlanır ve bu işaretçi val değişkeninin adresini tutar
+int main() {
+    // malloc(size) => byte 
+    int *ptr1 = malloc(10) ;// 10 bytes memory allocation
+    printf("%p\n",ptr1);    // memory addres => ptr => 0x149e05eb0 
+    printf("%d\n",*ptr1);   // contents not defined
+    free(ptr1);             // memors is freed
 
-    printf("Value of val: %d\n", val);                 // val değişkeninin değeri yazdırılır
-    printf("Address of val: %p\n", (void *)&val);      // val değişkeninin adresi yazdırılır
-    printf("Value pointed to by p_val: %d\n", *p_val); // p_val işaretçisinin işaret ettiği değer yazdırılır
+    // malloc(size) => byte
+    int *ptr2 = malloc(10 * sizeof(int));
+    printf("%p\n",ptr2);    // 10 * 4 = 40 bytes memory allocation
+    printf("%d\n",*ptr2);   // contents not defined
+    free(ptr2);             // memors is freed
 
-    //*p_val = 20;                           // p_val işaretçisinin işaret ettiği değer değiştirilir
-    //printf("New value of val: %d\n", val); // val değişkeninin yeni değeri yazdırılır
+    // malloc(size) => byte
+    int *ptr3 = malloc(10 * sizeof(char));
+    printf("%p\n",ptr3);    // 10 * 1 = 10 bytes memory allocation
+    printf("%d\n",*ptr3);   // contents not defined
+    free(ptr3);             // memors is freed
 
-    return 0; // Programın başarılı bir şekilde bittiğini belirtir
+
+    return 0;
 }
