@@ -1,19 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {   
-    int *ptr1;
-    int *ptr2;
-    int size;
+void display(int **matrix,int rows, int cols){
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++)
+            printf("%d ", matrix[i][j]);
+        printf("\n");
+    }
+}
 
-    size = 4 * sizeof(*ptr1);
-    ptr1 = malloc(size);
-    printf("addres = %p\n",ptr1);
+int main() {
+    int rows = 2, cols = 3;
     
-    // size changed
-    size = 6 * sizeof(*ptr1);
-    ptr2 = realloc(ptr1,size);
+    // satirlar icin memory allocation 
+    int **matrix = (int **)malloc(rows * sizeof(int *));
+    if(matrix == NULL){printf("Error");exit(EXIT_FAILURE);};
 
-    printf("addres = %p\n",ptr2);
+    // sutunlar icin memory allocation
+    for(int i = 0;i < rows;++i){
+        matrix[i] = (int *)malloc(cols * sizeof(int *));
+        if(matrix[i] == NULL){printf("Error");exit(EXIT_FAILURE);};
+    }
+
+    // arrayi doldur
+    int count = 1;
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+            matrix[i][j] = count++;
+        }
+    }
+
+    display(matrix,rows,cols);
+
+    for(int i = 0; i < rows;++i){
+        free(matrix[i]);
+    }
+    free(matrix);
     return 0;
 }

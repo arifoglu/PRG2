@@ -1,29 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {   
-    int *ptr;
-    char *ptr2;
+int main() {
+    int i = 45;
+    void *p_i = &i;
+    void *ptr1 = &p_i;
+    void *ptr2 = &ptr1;
+    void *ptr3 = &ptr2;
 
-    ptr = malloc(sizeof(int));
-    if(ptr == NULL){
-        printf("Error memory allocation!!");
-        return EXIT_FAILURE;
-    }
+    printf("i    : %d\n",i);
+    printf("p_i  : %p\n",p_i);
+    printf("ptr1 : %p\n",ptr1);
+    printf("ptr2 : %p\n",ptr2);
+    printf("ptr3 : %p\n",ptr3);
 
-    ptr2 = malloc(sizeof(char));
-    if(ptr2 == NULL){
-        printf("Error memory allocation!!");
-        free(ptr);
-        return EXIT_FAILURE;
-    }
-
-    *ptr = 42;
-    *ptr2 = 'A';
-    printf("ptr : %d, ptr2 : %c\n",*ptr,*ptr2);
-
-
-    free(ptr);
-    free(ptr2);
+    // dereferencing
+    printf("p_i  : %d\n",*(int *)p_i);
+    printf("ptr1 : %d\n",**(int **)ptr1);
+    printf("ptr2 : %d\n",***(int ***)ptr2);
+    printf("ptr3 : %d\n",****(int ****)ptr3);
     return 0;
 }

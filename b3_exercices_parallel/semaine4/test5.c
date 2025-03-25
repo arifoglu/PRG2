@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {   
-    int *students;                                    //pointer for memory allocation                    
-    int num_students = 3;                                  
-    students = calloc(num_students,sizeof(*students));// memory allocation for 3 students
-    if(students == NULL){
-        printf("Error !!");
-        return EXIT_FAILURE;
-    }
-    printf("address : %p,\n",students);
-    printf("students[0] : %d\n",students[0]);// 0
-    printf("students[1] : %d\n",students[1]);// 0
-    printf("students[2] : %d\n",students[2]);// 0
-    
-    printf("students[3] : %d\n",students[3]);// undefined
+int main() {
+    int vector[4] = {10,20,30,40};
+    int *p_vector;
 
-    free(students);
+    // tablo ayni zamanda bir pointer
+    p_vector = vector;
+
+    printf("address vector : %p\n",vector);
+    
+    printf("address vector : %p\n",&vector);
+
+    printf("vector[0]      : %p\n",&vector[0]);
+    
+    printf("p_vector       : %p\n",p_vector);
+
+    printf("vector[0]      : %d\n",vector[0]);
+
+    printf("p_vector[0]       : %d\n",*p_vector);
+
+    printf("p_vector[1]       : %d\n",*(p_vector+1));
+
+
+
     return 0;
 }

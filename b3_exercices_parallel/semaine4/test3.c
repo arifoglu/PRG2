@@ -1,24 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Memory situation
-ptr1[0] = 1684234849;   memory  int      0x64636261 
+int main() {
+    // dynamic memory allocation
+    int *secret = malloc(sizeof(int));
+    void *key;
 
-ptr1[0] = 1684234849;   memory  int      0x64 0x63 0x62 0x61
+    if (secret == NULL) {printf("Memory allocation failed!\n");return 1; }
 
-ptr1[0] = 1684234849;   memory char         a    b    c    d 
+    printf("Address of secret: %p, val = %x\n", secret, *secret);
+    *secret = 0xf88;
+    printf("Address of secret: %p, val = %x\n", secret, *secret);
 
-*/
+    key = secret;
+    printf("First byte of secret: %x\n", *((char *) key));
 
-int main() {   
-    int  *ptr1 = malloc(4);     // 4 bytes memory allocation
-    char *ptr2 = (char *)ptr1;  // 4 bytes(1byte, 1 byte, 1 byte, 1 byte) memory allocation
-    
-    ptr1[0] = 1684234849;
+    key = (char *)key + 1;
+    printf("Updated key address: %p\n", key);
+   
+    free(secret);
 
-    printf("ptr1 = %p, val(4bytes) = %d \n",ptr1,ptr1[0]);
-    printf("ptr2 = %p, byte1=%c,byte2=%c,byte3=%c,byte4=%c\n",ptr2,ptr2[0],ptr2[1],ptr2[2],ptr2[3]);
-
-    free(ptr1);
     return 0;
 }

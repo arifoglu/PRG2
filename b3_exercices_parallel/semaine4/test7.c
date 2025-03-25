@@ -1,32 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {   
-    int *ptr = NULL;
-    ptr = calloc(4,sizeof(*ptr));
-    
-    *ptr = 2;
-    
-    printf("address = %p\n",ptr);
-    
-    printf("ptr[0]  = %d\n",*ptr);
-    printf("ptr[1]  = %d\n",*(ptr+1));
-    printf("ptr[2]  = %d\n",*(ptr+2));
-    printf("ptr[3]  = %d\n",*(ptr+3));
+int main() {
+    //multidimensional array
 
-    printf("*******************\n");
+    // static
+    int matrix[2][3] = {{1,2,3},{4,5,6}};
+    printf("%d\n",matrix[1][2]); // 6
+
+    // pointer
+    int (*ptr)[3] = matrix;
+    printf("%d\n",ptr[1][2]); // 6
+
+    // dynamic 
+    int **tab;
+    tab = (int *)malloc(2 * sizeof(*tab));                  // 2 satir dynamic allocation
+    if(tab == NULL ){printf("Error\n");exit(EXIT_FAILURE);}
+    for(int i = 0; i < 2;++i){
+        tab[i] = (int *)malloc(3 * sizeof(*tab));           // 3 colon dynamic allocation
+        if(tab[i] == NULL ){printf("Error\n");exit(EXIT_FAILURE);} 
+    }
     
-    printf("address = %p\n",ptr);
-    ptr[1] = 4; 
-    ptr[2] = 6; 
-    printf("ptr[0]  = %d\n",*ptr);
-    printf("ptr[1]  = %d\n",*(ptr+1));
-    printf("ptr[2]  = %d\n",*(ptr+2));
-    printf("ptr[3]  = %d\n",*(ptr+3));
+    for(int i = 0; i< 2;++i){
+        free(tab[i]);
+    }
+    free(tab);
 
-    printf("*******************\n");
-
-
-    
     return 0;
 }

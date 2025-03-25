@@ -1,21 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {   
-    int *students = NULL;                             //pointer for memory allocation                    
-    int num_students = 3;                                  
-    students = calloc(num_students,sizeof(*students));// memory allocation for 3 students
-    if(students == NULL){
-        printf("Error !!");
-        return EXIT_FAILURE;
+int main() {
+    // static array
+    int arr[5] = {1,2,3,4,5};
+    char str[6] = "Hello";
+    // acces 
+    printf("%d\n",arr[0]);
+    printf("%s\n",str);
+
+    // dynamic array
+    int *tab;
+    tab = (int *)malloc(5 * sizeof(*tab)); // 5 elemanli dynamic array (icerik indetermine)
+    if(tab == NULL){printf("Error!!\n");exit(EXIT_FAILURE);}
+    for(int i = 0; i < 5;++i){
+        //tab[i] *= 2;
+        printf("%d",tab[i]);
     }
-    printf("address : %p,\n",students);
-    printf("students[0] : %d\n",*(students));    // 0
-    printf("students[1] : %d\n",*(students + 1));// 0
-    printf("students[2] : %d\n",*(students + 2));// 0
+    printf("\n");
+    free(tab);
 
-    printf("students[3] : %d\n",*(students + 3));// indefined
-
-    free(students);
     return 0;
 }

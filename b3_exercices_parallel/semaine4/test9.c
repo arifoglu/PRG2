@@ -1,22 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {   
-    int *ptr1 = NULL;
-    int *ptr2 = NULL;
-
-    ptr1 = (int *)calloc(10,sizeof(*ptr1));
-    if(ptr1 == NULL){
-        goto liberation;
+void display1(int tab[]){
+    for(int i = 0; i < 3;++i){
+        printf("%d ",tab[i]);
     }
+    printf("\n");
+}
 
-    ptr2 = (int *)calloc(12,sizeof(*ptr2));
-    if(ptr2 == NULL){
-        goto liberation;
+// pointer ile kullanimi
+void display2(int *tab){
+    for(int i = 0; i < 3;++i){
+        printf("%d ",*(tab+i));
     }
+    printf("\n");
+}
+int main() {
+    int tab[] = {10,20,30};
 
-    liberation:
-        free(ptr1);
-        free(ptr2);
+    //C’de array değer olarak değil, referans (adres) olarak fonksiyonlara geçirilir.
+    //tab zaten bir pointer olduğu için fonksiyona int tab[] şeklinde geçirilir.
+    display1(tab);
+
+    // pointer ile kullanimi
+    display2(tab);
+
     return 0;
 }
