@@ -1,19 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-float* tablo(int *add){
-    int n, i;
-    float *tab;
-    printf("Taille du tablo : ");
-    scanf("%d",&n);
-    *add = n;
-    tab = (float *)malloc(n*sizeof(float));
+int* allocate(int n){
+    int *ptr = (int *)calloc(n ,sizeof(int) );
+    if(ptr == NULL){
+        printf("Error d'allocation!!");
+    }
+    return ptr;
 }
 
 int main() {
-    int nb;
-    float *tab;
-    tab = tablo(&nb);
+    int n;
+    int *tab  = NULL;
+
+    printf("n : ");
+    scanf("%d",&n);
     
-    return EXIT_SUCCESS;
+    tab = allocate(n);
+    if (tab == NULL) {
+        return 1; 
+    }
+
+    free(tab);
+
+    return 0;
 }
