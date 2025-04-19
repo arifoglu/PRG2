@@ -27,14 +27,15 @@ int main() {
         count++;
 
         if(count == capacite){
-            capacite *= 2;
-           int  *tab2 = (int *)realloc(tab,capacite * sizeof(*tab));
-           if(tab2 == NULL){
-            // si realloc échoué
+            int *oldtab = tab;
+            tab = (int *)realloc(oldtab, capacite * 2 * sizeof(int));
+            if(tab == NULL){
+                printf("Memoier pleine\n");
+                tab = oldtab;
                 break;
-           }
-           // si realloc reussi
-           tab = tab2;
+            }else{
+                capacite *= 2;
+            }
         }
         
     }

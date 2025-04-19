@@ -67,7 +67,7 @@ int main(){
     printf("%ld\n",ptr2 - str9);// pointer farki index i verir
 
     ////////////////////// strstr
-    // strchr(string,string) => aranan stringi bulur,pointer dondurur 
+    // strstr(string,string) => aranan stringi bulur,pointer dondurur 
     char str10[] = "bonjour tout le monde";
     char *ptr3 = strstr(str10,"monde");
     printf("%ld\n",ptr3 - str10);// pointer farki index i verir
