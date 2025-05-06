@@ -11,7 +11,18 @@ int main() {
 
     configuration |= option;
     printf("New configuration 0x%X\n",configuration);
-    
+    /*
+    hexadecimal den binary gosterim icin her basamagi tek tek cevir:kolay yontem
+    0x12 
+           1    2
+        0001 0010
+    0x32    
+           3    2
+        0011 0010
+    0x43    
+           4    3
+        0100 0011    
+    */
     ////////////////////////////////////////////////
     
     //// EXAMPLE 1 
@@ -36,7 +47,9 @@ int main() {
     unsigned char reg = 0x00;
 
     reg = (rouge | blue); // violet rengi elde etmek icin
-    printf("Configurration led : 0x%x\n",reg); // 0x28 => 00101000
-
+    printf("Configurration led : 0x%x\n",reg); // 0x28 => 0010 1000
+    
+    reg = (rouge | vert); // jaune rengi elde etmek icin
+    printf("Configurration led : 0x%x\n",reg); // 0x30 => 0011 0000
     return 0;
 } 

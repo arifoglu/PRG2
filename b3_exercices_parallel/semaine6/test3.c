@@ -10,13 +10,15 @@ int main(){
 
     /////////////////////////// strcat 
     // strcat(but,source) 
-    //ikinci arrayi(source) birincinin(but) sonuna ekler.eklemeden önce birinci arrayin sonundaki karakteri (\0) siler.
+    //ikinci arrayi(source) birincinin(but) sonuna ekler.eklemeden önce birinci
+    //arrayin sonundaki karakteri (\0) siler.
+    // birinci array kapasitesi mutlaka yeterli olmali!!
     char str2[] = " world";
     strcat(str,str2);
     printf("%s\n",str);
 
     /////////////////////////// strncat
-    // strncat(but ,source, largemax), ikinci array(source) den bleirtilen sayi
+    // strncat(but ,source, largemax), ikinci array(source) den belirtilen sayi
     // kadar karakter alir ilk arraye ekler.
     char str3[] = "! good morning";
     strncat(str,str3,6);
