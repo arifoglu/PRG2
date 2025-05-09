@@ -1,0 +1,4 @@
+NOM PRENOM MOYENNE
+Becile, Alain, 1.900000
+Hochon, Paul, 3.433333
+Trichet, Ella, 6.000000
