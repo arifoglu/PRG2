@@ -1,4 +1,0 @@
-NOM     PRENOM  NOTE1   NOTE2   NOTE3
-Becile  Alain   1.8     1.9     2.0
-Hochon  Paul    3.5     3.7     3.1
-Trichet Ella    6.0     6.0     6.0

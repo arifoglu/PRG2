@@ -13,6 +13,7 @@ int main() {
         printf("fichier n'a pas ouvert!\n");
         return 1;
     }
+    // rewind() yapmaya gerek yok, "r" modunda dosya bastan okunur.
     char buffer[100];
     while(fgets(buffer, sizeof(buffer), fichier) != NULL){
         printf("Okunan satir : %s",buffer);

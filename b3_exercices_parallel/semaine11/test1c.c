@@ -15,7 +15,8 @@ int main() {
     fputs("Hello\n",fichier); // yazma 
 
     rewind(fichier);          // basa don
-
+    //fseek(fichier,0,SEEK_SET);// ayni sekilde basa doner
+    
     char buffer[100];
     while(fgets(buffer, sizeof(buffer) ,fichier) != NULL){
         printf("%s",buffer);

@@ -13,6 +13,11 @@ int main() {
         printf("fichier n'a pas ouvert!\n");
         return 1;
     }
+    /*
+    // "a" modu dosyanın sonuna ekleme yapar , yeni satıra geçmez otomatik
+    //  yeni satır icin \n gerekir
+    */
+    
     // fputs(string,hedef) => ile istedigimiz satiri dosya sonuna ekleme yapiyoruz.
     fputs("bu satir dosyanin sonuna eklenecek!\n",fichier);
     
@@ -21,6 +26,8 @@ int main() {
 
     // fputc(caracter,hedef) ile sadece bir caracter konur
     fputc('Z',fichier);
+
+
 
     fclose(fichier);
     return 0;
