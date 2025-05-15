@@ -1,19 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc,char *argv[]){
-    // argv[0] => her zaman programin adi,yolu.=> ./a.out veya ./project gibi
-    // argv[1],argv[2]=> kullanici argumanlari
+int main(int argc, char *argv[]){
+    // sprintf() ile diziye yaz,
+    char name[] = "ALI";
+    int age = 30;
+    char list[100];
+    sprintf(list,"%s %d",name,age);
+    printf("%s\n",list); 
 
-    printf("Total %d argument.\n",argc);// ./a.out 12 23    => Total 3 argument.
+    // 
+    char city[] = "Istanbul";
+    int zip = 34000;
+    char list2[100];
+    sprintf(list2,"%s %d",city,zip);
+    printf("%s\n",list2);
 
-
-    for(int i = 0; i < argc;++i){
-        printf("arg[%d] : %s\n",i,argv[i]);
-    }
-    /*
-    arg[0] = ./a.out
-    arg[1] = a
-    arg[2] = 2
-    */
+    
     return 0;
 }
