@@ -29,6 +29,6 @@ int main() {
 
     free(buffer);
 
-$
+
     return 0;
 }

@@ -27,8 +27,8 @@ int countm(FILE *fp){
 }
 
 int countl(FILE *fp){
-    int count = 0;
     int c = fgetc(fp);
+    int count = 0;
     
     while((c = fgetc(fp)) != EOF){
         if(c == '\n'){

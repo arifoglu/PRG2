@@ -3,6 +3,8 @@
         "stdio.h": "c",
         "string.h": "c",
         "ctype.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "typeinfo": "c",
+        "assert.h": "c"
     }
 }

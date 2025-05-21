@@ -4,7 +4,7 @@
 
 /*
 -burda eger compile zamaninda bu sekilde cagirilirsa => gcc test1.c -DDISPLAY 
--o zaman EXTRA ifades BONJOUR ile degisecek.asm
+-o zaman EXTRA ifades BONJOUR ile degisecek.
 -yani sadece compile ile aktif olmasini isteyecegimiz yapiyi bu sekilde yapiyoruz.
 */
 #ifdef DISPLAY

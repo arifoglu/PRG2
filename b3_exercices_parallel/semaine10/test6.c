@@ -4,8 +4,6 @@
 
 #ifdef VERBOSE
 
-#define DEBUG
-//#define VERBOSE
 void display_log(void){
     printf("Detailed log\n"); 
 }
