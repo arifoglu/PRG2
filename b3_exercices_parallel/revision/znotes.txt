@@ -1,0 +1,4 @@
+NOM     PRENOM  NOTE1   NOTE2   NOTE3
+Becile  Alain   1.8     1.9     2.0
+Bedile  Paule   4.8     3.9     3.0
+Bemile  Pauls   2.8     2.9     4.0
