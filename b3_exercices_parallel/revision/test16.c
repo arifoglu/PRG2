@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-typedef double mat3x3;
-typedef double vec3;
+typedef double mat3x3[3][3];
+typedef double vec3[3];
 
 void mat_vec_mult(const mat3x3 m, const vec3 v, vec3 w){
     for(int i =0; i< 3;++i){
